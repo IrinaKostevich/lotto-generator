@@ -1,0 +1,12 @@
+.lotto-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: lightcoral;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.5);
+    font-size: 1.5rem;
+}

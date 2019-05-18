@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+    transition-property: background-color, box-shadow, text-decoration;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
+}
+
+html {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #4A4A4A;
+}

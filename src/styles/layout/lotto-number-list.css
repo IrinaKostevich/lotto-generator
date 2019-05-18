@@ -1,0 +1,9 @@
+.l-lotto-number-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.l-lotto-number-list .l-lotto-item {
+    margin: 1rem;
+}

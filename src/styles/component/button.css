@@ -1,0 +1,18 @@
+.btn {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 3em;
+    padding-right: 3em;
+    border-radius: 2rem;  
+    border: 2px solid rgb(96, 122, 114);
+    background-color: rgb(183, 226, 212);
+    color: dimgray;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px 1px rgba(0,0,0,.5);
+}

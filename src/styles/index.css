@@ -1,20 +1,13 @@
-* {
-    font-family: Helvetica, Arial, sans-serif;
-  }
-  
-  
-  h1 {
-    font-size: 24px;
-    color: SeaGreen;
-  }
-  
-  
-  p, 
-  li {
-    font-size: 18px;
-  }
-  
-  
-  a {
-    text-decoration: none;
-  }
+/* Base */
+@import './base/base.css';
+
+/* Components */
+@import "./component/button.css";
+@import "./component/header.css";
+@import "./component/lotto-number.css";
+
+/* Layout */
+@import "./layout/button-bar.css";
+@import "./layout/cell.css";
+@import "./layout/lotto-number-list.css";
+@import "./layout/well.css";
