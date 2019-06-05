@@ -11,19 +11,29 @@
 </head>
 
 <body>
-
+    <!-- Header -->
     <header class="header">
         <div class="header-content">
             <h1 class="header-title">Lotto Generator</h1>
         </div>
     </header>
     <main>
-        <div id="lotto-container" class="l-cell l-well"></div>
+
+        <!-- Select Game -->
+        <div class="l-cell l-well">
+            <select id="js-lotto-game-select">
+                <option value="0">-- Please choose an option --</option>
+            </select>
+        </div>
+
+        <!-- Lotto numbers -->
+        <div id="js-lotto-container" class="l-cell l-well"></div>
+
+        <!-- Next button -->
         <div class="l-btn-bar">
-            <button id="next-button" class="btn" type="button">Next</button>
+            <button id="js-next-button" class="btn" type="button">Next</button>
         </div>
     </main>
-    <footer></footer>
 </body>
 
 </html>
