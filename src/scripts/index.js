@@ -20,4 +20,4 @@ function nextButtonHandler() {
 getGameOptions()
     .then(lottoGameSelectElement.addEventListener('change', event => dropdownHandler(event)))
     .then(nextButton.addEventListener('click', event => nextButtonHandler(event)))
-    .catch(error => console.error(error));
+    .catch(error => console.error(error.name, error.details));
