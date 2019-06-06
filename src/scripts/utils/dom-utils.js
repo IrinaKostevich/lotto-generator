@@ -6,23 +6,6 @@ export function createElement(html) {
     return element.firstElementChild;
 }
 
-// To "dom-utils.js"
-// export function createDomOptions(options, valueAccessor, textAccessor)
-// createDomOptions(lottos, x => x.id, x => x.name)
-/* export function createDomOptions(objects) {
-    const optionsList = [];
-
-    for (const [key, value] of objects) {
-        const optionElement = document.createElement('option');
-        optionElement.value = key;
-        optionElement.innerText = value;
-
-        optionsList.push(optionElement);
-    }
-
-    return optionsList;
-} */
-
 export function createDomOptions(options, valueAccessor, textAccessor) {
     const optionsList = [];
 
