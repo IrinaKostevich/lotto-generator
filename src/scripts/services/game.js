@@ -1,3 +1,5 @@
+import ServiceError from './errors.js';
+
 const GAME_GENERATE_URL = 'https://duckling-lotto-generator-cloud.appspot.com/api/game/generate';
 
 export default async function generateRandomGame(config) {
@@ -9,11 +11,14 @@ export default async function generateRandomGame(config) {
             },
             body: JSON.stringify(config)
         });
-        const json = await response.json();
+        const body = await response.json();
 
-        return json;
+        if (!response.ok) {
+            throw new ServiceError('Cannot generate game', body);
+        }
+
+        return body;
     } catch (error) {
-        console.error(error);
-        throw new Error('HTTP request failed.');
+        throw new ServiceError('Cannot generate game', { error: 'Unknown error.' }, error);
     }
 }
