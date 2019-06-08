@@ -3,11 +3,13 @@
 
 /* Components */
 @import "./component/button.css";
+@import "./component/footer.css";
 @import "./component/header.css";
 @import "./component/lotto-number.css";
 
 /* Layout */
 @import "./layout/button-bar.css";
 @import "./layout/cell.css";
+@import "./layout/game-bar.css";
 @import "./layout/lotto-number-list.css";
 @import "./layout/well.css";

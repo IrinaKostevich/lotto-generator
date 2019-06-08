@@ -1,0 +1,19 @@
+.l-game-bar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.l-game-bar > * {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/* Media query for mobile view */
+@media only screen and (max-width: 600px) {
+    .l-game-bar {
+        justify-content: center;
+    }
+}

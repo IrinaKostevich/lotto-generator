@@ -1,0 +1,17 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 4rem;
+    width: 100%;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.footer .footer-content .footer-text {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
