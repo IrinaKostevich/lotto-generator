@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <title>Lotto Generator</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="./styles/vendor/reset.css" >
+    <link type="text/css" rel="stylesheet" href="./styles/vendor/reset.css">
     <link type="text/css" rel="stylesheet" href="./styles/index.css">
     <script type="module" src="scripts/index.js" defer></script>
 </head>
@@ -18,22 +18,39 @@
         </div>
     </header>
     <main>
-
         <!-- Select Game -->
-        <div class="l-cell l-well">
-            <select id="js-lotto-game-select">
+        <div class="select-game-bar l-game-bar l-cell l-well">
+            <!-- Dropdown -->
+            <select class="select-game-bar-dropdown" id="js-lotto-game-select">
                 <option value="0">-- Please choose an option --</option>
             </select>
+
+            <!-- Slider -->
+            <div class="select-game-bar-slider">
+                <label for="js-range-input">Balls quantity</label>
+                <input id="js-range-input" type="range" min="1" step="1">
+                <output id="js-range-output" for="js-range-input">0</output>
+            </div>
         </div>
 
         <!-- Lotto numbers -->
         <div id="js-lotto-container" class="l-cell l-well"></div>
 
         <!-- Next button -->
-        <div class="l-btn-bar">
+        <div class="l-btn-bar l-cell l-well">
             <button id="js-next-button" class="btn" type="button">Next</button>
         </div>
     </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div>
+            <img src="/src/images/raccoon-gambling.png" alt="Raccoon gambling" width="300">
+        </div>
+        <div class="footer-content">
+            <p class="footer-text">Gamble like nobody’s watching 🙂</p>
+            <p class="footer-text">&copy; 2019, Raccoon & Duckling</p>
+        </div>
+    </footer>
 </body>
 
 </html>
