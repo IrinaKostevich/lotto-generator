@@ -1,35 +1,52 @@
-import { getGameOptions, generateGame, updateDefaultRange } from './game.js';
-import { makeOptionSelected, getCurrentOption } from './utils/dom-utils.js';
+import LottoStorage from './services/lotto-storage.js';
+import getLottos from './services/lotto.js';
+import generateRandomGame from './services/game.js';
+import * as page from './ui/page.js';
+import queryElements from './elements.js';
 
-const lottoGameSelectElement = document.getElementById('js-lotto-game-select');
-const rangeInputElement = document.getElementById('js-range-input');
-const rangeOutputElement = document.getElementById('js-range-output');
-const nextButton = document.getElementById('js-next-button');
+let elements = null;
+const lottoStorage = new LottoStorage();
 
-function dropdownHandler(event) {
-    const selectedItem = event.target;
-    const selectedItemValue = selectedItem.value;
+async function onLottoSelectChange(event) {
+    const selectedLottoId = Number(event.target.value);
 
-    makeOptionSelected(selectedItem, selectedItemValue);
-    updateDefaultRange(selectedItemValue);
+    if (selectedLottoId === 0) {
+        elements.gameControlsElement.setAttribute('style', 'display: none');
+    } else {
+        elements.gameControlsElement.removeAttribute('style');
 
-    const numbersCount = rangeInputElement.value;
-    generateGame(selectedItemValue, numbersCount);
+        const lotto = lottoStorage.getLotto(selectedLottoId);
+        page.updateRangeElementForConfig(elements.rangeInputElement, elements.rangeOutputElement, lotto.config);
+
+        const numbers = await generateRandomGame(lotto.config);
+        page.updateBallListElement(elements.ballListElement, numbers);
+    }
 }
 
-function rangeInputHandler(event) {
-    rangeOutputElement.value = event.target.value;
+function onBallsCountChange(event) {
+    page.updateRangeOutput(elements.rangeOutputElement, event.target.value);
 }
 
-function nextButtonHandler() {
-    const selectedItemValue = getCurrentOption(lottoGameSelectElement).value;
-    const numbersCount = rangeInputElement.value;
+async function onNextClick() {
+    const selectedLottoId = Number(elements.lottoSelectElement.value);
+    const numbersCount = elements.rangeInputElement.valueAsNumber;
+    const lotto = lottoStorage.getLotto(selectedLottoId);
 
-    generateGame(selectedItemValue, numbersCount);
+    const numbers = await generateRandomGame({ ...lotto.config, numbersCount });
+    page.updateBallListElement(elements.ballListElement, numbers);
 }
 
-getGameOptions()
-    .then(lottoGameSelectElement.addEventListener('change', event => dropdownHandler(event)))
-    .then(rangeInputElement.addEventListener('change', event => rangeInputHandler(event)))
-    .then(nextButton.addEventListener('click', event => nextButtonHandler(event)))
-    .catch(error => console.error(error.name, error.details));
+async function main() {
+    const lottos = await getLottos();
+    lottoStorage.saveLottos(lottos);
+
+    elements = queryElements();
+
+    page.fillLottoSelectElement(elements.lottoSelectElement, lottos);
+
+    elements.lottoSelectElement.addEventListener('change', event => onLottoSelectChange(event));
+    elements.rangeInputElement.addEventListener('change', event => onBallsCountChange(event));
+    elements.nextButton.addEventListener('click', event => onNextClick(event));
+}
+
+main();
