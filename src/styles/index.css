@@ -2,14 +2,16 @@
 @import './base/base.css';
 
 /* Components */
+@import "./component/ball.css";
 @import "./component/button.css";
+@import "./component/dropdown.css";
 @import "./component/footer.css";
 @import "./component/header.css";
-@import "./component/lotto-number.css";
+@import "./component/slider.css";
 
 /* Layout */
-@import "./layout/button-bar.css";
+@import "./layout/ball-list.css";
 @import "./layout/cell.css";
-@import "./layout/game-bar.css";
-@import "./layout/lotto-number-list.css";
+@import "./layout/game-container.css";
+@import "./layout/slider-container.css";
 @import "./layout/well.css";

@@ -13,12 +13,25 @@
         "sourceType": "module"
     },
     "rules": {
-        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
         "comma-dangle": "off",
         "func-names": "off",
         "no-console": "off",
-        "space-before-function-paren": ["error", "never"],
+        "space-before-function-paren": [
+            "error",
+            "never"
+        ],
         "prefer-arrow-callback": "off",
-        "no-restricted-syntax": ["error", "WithStatement", "BinaryExpression[operator='in']"]
+        "no-restricted-syntax": [
+            "error",
+            "WithStatement",
+            "BinaryExpression[operator='in']"
+        ]
     }
 }

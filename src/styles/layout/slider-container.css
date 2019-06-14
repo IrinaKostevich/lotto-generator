@@ -1,0 +1,11 @@
+.l-slider-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .l-slider-container {
+        width: 100%;
+    }
+}

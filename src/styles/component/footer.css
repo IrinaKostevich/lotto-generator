@@ -1,8 +1,11 @@
 .footer {
     position: absolute;
     bottom: 0;
-    height: 4rem;
     width: 100%;
+}
+
+.footer .footer-image img{
+    width: 270px;
 }
 
 .footer .footer-content {
@@ -14,4 +17,26 @@
 .footer .footer-content .footer-text {
     font-size: 0.8rem;
     font-weight: 300;
+    color: gray;
+}
+
+/* Media query for mobile view */
+@media only screen and (max-width: 600px) {
+    .footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .footer-image {
+        text-align: center;
+    }
+
+    .footer .footer-image img{
+        width: 200px;
+    }
+
+    .footer .footer-content .footer-text {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
 }
