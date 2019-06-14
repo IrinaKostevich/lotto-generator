@@ -4,6 +4,6 @@
     flex-wrap: wrap;
 }
 
-.l-ball-list .l-ball-item {
+.l-ball-list > * {
     margin: 1rem;
 }

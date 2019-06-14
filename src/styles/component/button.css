@@ -1,8 +1,5 @@
 .btn {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-left: 3em;
-    padding-right: 3em;
+    padding: 0.5em 3em;
     border-radius: 2rem;  
     border: 2px solid rgb(96, 122, 114);
     background-color: rgb(183, 226, 212);

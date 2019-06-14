@@ -1,10 +1,4 @@
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer .footer-image img{
+.footer .footer-image-area img {
     width: 270px;
 }
 
@@ -27,11 +21,11 @@
         align-items: center;
     }
 
-    .footer .footer-image {
+    .footer .footer-image-area {
         text-align: center;
     }
 
-    .footer .footer-image img{
+    .footer .footer-image-area img {
         width: 200px;
     }
 

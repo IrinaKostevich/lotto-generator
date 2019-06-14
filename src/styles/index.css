@@ -4,14 +4,14 @@
 /* Components */
 @import "./component/ball.css";
 @import "./component/button.css";
-@import "./component/dropdown.css";
 @import "./component/footer.css";
 @import "./component/header.css";
 @import "./component/slider.css";
 
 /* Layout */
 @import "./layout/ball-list.css";
+@import "./layout/btn-container.css";
 @import "./layout/cell.css";
+@import "./layout/footer.css";
 @import "./layout/game-container.css";
-@import "./layout/slider-container.css";
 @import "./layout/well.css";

@@ -18,38 +18,36 @@
             <h1 class="header-title">Lotto Generator</h1>
         </div>
     </header>
-    <main>
-        <div class="l-game-container l-cell l-well">
-            <!-- Game Dropdown-->
-            <div>
-                <select class="dropdown" id="js-lotto-game-select">
-                    <option value="0">-- Please choose an option --</option>
-                </select>
-            </div>
+    <main class="l-game-container l-cell">
+        <!-- Game Dropdown-->
+        <select id="js-lotto-game-select">
+            <option value="">-- Please choose a lotto --</option>
+        </select>
 
-            <!-- Game Controls -->
-            <div id="js-game-controls" style="display: none;">
-                <!-- Slider -->
-                <div class="l-slider-container slider">
-                    <input id="js-range-input" name="range-input" type="range" min="1" step="1">
-                    <div class="slider-info">
-                        <label class="slider-info-text" for="js-range-input">Balls count: </label>
-                        <output class="slider-info-number" id="js-range-output" for="js-range-input">0</output>
-                    </div>
+        <!-- Game Controls -->
+        <section class="l-well" id="js-game-controls" style="display: none;">
+            <!-- Slider -->
+            <div class="slider">
+                <input class="slider-input" id="js-range-input" name="range-input" type="range" min="1" step="1">
+                <div class="slider-info">
+                    <label class="slider-info-text" for="js-range-input">Balls count: </label>
+                    <output class="slider-info-number" id="js-range-output" for="js-range-input">0</output>
                 </div>
-
-                <!-- Lotto balls -->
-                <div id="js-lotto-balls"></div>
-
-                <!-- Next button -->
-                <button id="js-next-button" class="btn" type="button">Next</button>
             </div>
-        </div>
+
+            <!-- Lotto balls -->
+            <div id="js-lotto-balls"></div>
+
+            <!-- Next button -->
+            <div class="l-btn-container">
+                <button class="btn" id="js-next-button" type="button">Next</button>
+            </div>
+        </section>
     </main>
     <!-- Footer -->
     <footer class="footer">
         <div class="l-cell">
-            <div class="footer-image">
+            <div class="footer-image-area">
                 <img src="./images/raccoon-gambling.png" alt="Raccoon gambling">
             </div>
             <div class="footer-content">
