@@ -2,7 +2,7 @@ import { createElement } from '../utils/dom-utils.js'
 
 function createBallsListItemHtml(number) {
     return `
-        <li class="ball l-ball-item">${number}</li>
+        <li class="ball">${number}</li>
     `;
 }
 

@@ -25,3 +25,9 @@ export function updateRangeElementForConfig(rangeElement, outputElement, config)
 export function updateBallListElement(ballListElement, numbers) {
     ballListElement.innerHTML = createBallsListElement(numbers).outerHTML;
 }
+
+export function updateControlsVisibility(element, isVisible) {
+    const displayValue = isVisible ? 'block' : 'none';
+
+    element.style.display = displayValue;
+}

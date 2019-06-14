@@ -10,17 +10,15 @@ const lottoStorage = new LottoStorage();
 async function onLottoSelectChange(event) {
     const selectedLottoId = Number(event.target.value);
 
-    if (selectedLottoId === 0) {
-        elements.gameControlsElement.setAttribute('style', 'display: none');
-    } else {
-        elements.gameControlsElement.removeAttribute('style');
+    page.updateControlsVisibility(elements.gameControlsElement, !!selectedLottoId);
 
-        const lotto = lottoStorage.getLotto(selectedLottoId);
-        page.updateRangeElementForConfig(elements.rangeInputElement, elements.rangeOutputElement, lotto.config);
+    if (!selectedLottoId) return;
 
-        const numbers = await generateRandomGame(lotto.config);
-        page.updateBallListElement(elements.ballListElement, numbers);
-    }
+    const lotto = lottoStorage.getLotto(selectedLottoId);
+    page.updateRangeElementForConfig(elements.rangeInputElement, elements.rangeOutputElement, lotto.config);
+
+    const numbers = await generateRandomGame(lotto.config);
+    page.updateBallListElement(elements.ballListElement, numbers);
 }
 
 function onBallsCountChange(event) {
